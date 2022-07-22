@@ -2,10 +2,16 @@
 
 ## TODO
 
-[] setup project / dependencies
-[] setup eslint
-[] create a discord application / bot
-[] add bot to a server
-[] setup basic bot
-[] build "echo" command
-[] build other command
+[x] setup project / dependencies
+
+[x] setup eslint
+
+[x] create a discord application / bot
+
+[x] add bot to a server
+
+[x] setup basic bot
+
+[x] build "echo" command
+
+[x] build other command
