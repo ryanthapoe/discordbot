@@ -1,0 +1,32 @@
+{
+  "name": "discordbot",
+  "version": "1.0.0",
+  "description": "la la la",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon src/index.js",
+    "deploy-command": "node src/deploy-commands.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanthapoe/discordbot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ryanthapoe/discordbot/issues"
+  },
+  "homepage": "https://github.com/ryanthapoe/discordbot#readme",
+  "dependencies": {
+    "@discordjs/builders": "^1.0.0",
+    "@discordjs/rest": "^1.0.0",
+    "discord-api-types": "^0.36.2",
+    "discord.js": "^13.3.1",
+    "dotenv": "^16.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^8.20.0"
+  }
+}
