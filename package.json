@@ -5,8 +5,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon src/index.js",
-    "deploy-command": "node src/deploy-commands.js"
+    "start": "npm run deploy-commands & nodemon src/index.js",
+    "deploy-commands": "node src/deploy-commands.js"
   },
   "repository": {
     "type": "git",
@@ -23,8 +23,9 @@
     "@discordjs/builders": "^1.0.0",
     "@discordjs/rest": "^1.0.0",
     "discord-api-types": "^0.36.2",
-    "discord.js": "^13.3.1",
-    "dotenv": "^16.0.1"
+    "discord.js": "^14.0.3",
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.6"
   },
   "devDependencies": {
     "eslint": "^8.20.0"
