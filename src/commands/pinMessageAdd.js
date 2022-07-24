@@ -13,7 +13,7 @@ module.exports = {
     const { user } = interaction;
     const { username } = user;
     try {
-      const isMessageExist = SavedMessage.findOne({ messageAlias});
+      const isMessageExist = await SavedMessage.findOne({ messageAlias });
       if (!isMessageExist) {
         const newMessage = new SavedMessage({ author: username, messageUrl, messageAlias});
         const result = await newMessage.save();

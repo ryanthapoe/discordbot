@@ -1,0 +1,14 @@
+version: '3'
+services:
+  app:
+    container_name: kizuna-bot
+    restart: always
+    build: .
+    links:
+      - mongo
+  mongo:
+    container_name: mongo
+    image: mongo
+    ports:
+      - "27017:27017"
+    

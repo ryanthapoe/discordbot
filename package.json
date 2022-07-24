@@ -5,8 +5,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npm run deploy-commands & nodemon src/index.js",
+    "dev": "npm run deploy-commands & nodemon src/index.js",
+    "start": "npm run deploy-commands & node src/index.js",
     "deploy-commands": "node src/deploy-commands.js"
+    
   },
   "repository": {
     "type": "git",
