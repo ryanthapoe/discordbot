@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-// const db = require('../config/db');
 
 const savedMessageSchema = new mongoose.Schema({
   author: {
@@ -15,6 +14,14 @@ const savedMessageSchema = new mongoose.Schema({
     required: true,
     unique: true,
   },
+  guildId: {
+    type: String,
+    required: true,
+  },
+  status: {
+    type: Boolean,
+    default: true,
+  }
 }, 
 { 
   timestamps: true

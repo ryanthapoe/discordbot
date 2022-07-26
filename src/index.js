@@ -24,17 +24,12 @@ client.commands = new Collection();
 const commandsPath = path.join(__dirname, 'commands');
 const commandFiles = fs.readdirSync(commandsPath).filter(file => file.endsWith('.js'));
 
+const commands = [];
+
 for (const file of commandFiles) {
   const filePath = path.join(commandsPath, file);
   const command = require(filePath);
   client.commands.set(command.data.name, command);
-}
-
-const commands = [];
-
-for(const file of commandFiles) {
-  const filePath = path.join(commandsPath, file);
-  const command = require(filePath);
   commands.push(command.data.toJSON());
 }
 
@@ -47,9 +42,10 @@ discordGuildsId.forEach((id) => {
     .catch(console.error);
 });
 
+const dbUrl = process.env.NODE_ENV === 'development' ? process.env.MONGO_CLUSTER_URL_DEV : process.env.MONGO_CLUSTER_URL;
 
 client.once('ready', () => {
-  mongoose.connect(process.env.MONGO_CLUSTER_URL, {
+  mongoose.connect(dbUrl, {
     dbName: 'kizuna'
   }, function(err) {
     if (err) return console.log('error connecting to database', err);
@@ -60,7 +56,7 @@ client.once('ready', () => {
 
 client.on('guildCreate', async interaction => {
   rest.put(Routes.applicationGuildCommands(process.env.DISCORD_CLIENT_ID, interaction.id), { body: commands })
-    .then(() => console.log('Successfully registered application commands. to ' + interaction.name))
+    .then(() => console.log('Successfully registered application commands to ' + interaction.name))
     .catch(console.error);
 });
 
